@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1b">
+  <title>TechSoft | Group Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="login.js" defer></script>
+</head>
+<body class="login-page">
+
+  <main class="login-wrapper">
+    <section class="login-card">
+      <div class="brand-icon">T</div>
+
+      <p class="eyebrow">CONNECT • COLLABORATE • COMMUNICATE</p>
+      <h1>Welcome to <span>TechSoft</span></h1>
+      <p class="subtitle">
+        Your space to connect with your team in real time.
+      </p>
+
+      <form id="loginForm">
+        <label for="username">Your display name</label>
+
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your name"
+          maxlength="24"
+          autocomplete="nickname"
+          required
+        >
+
+        <p id="loginError" class="error-message" role="alert"></p>
+
+        <button type="submit" class="primary-button">
+          Enter Group Chat <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <div class="login-footer">
+        <span class="status-dot"></span>
+        Ready to connect
+      </div>
+    </section>
+
+    <p class="copyright">© 2026 TechSoft. Built for better conversations.</p>
+  </main>
+
+</body>
+</html>

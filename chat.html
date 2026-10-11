@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1b">
+  <title>TechSoft | Team Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="chat.js" defer></script>
+</head>
+<body class="chat-page">
+
+  <div class="chat-layout">
+
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-icon small">T</span>
+        <span>Tech<span class="brand-accent">Soft</span></span>
+      </a>
+
+      <div class="sidebar-label">WORKSPACE</div>
+
+      <div class="workspace-item active">
+        <span class="channel-symbol">#</span>
+        <span>Group Chat</span>
+        <span class="online-indicator"></span>
+      </div>
+
+      <div class="sidebar-info">
+        <div class="sidebar-label">YOUR ACCOUNT</div>
+        <div class="profile-mini">
+          <div class="avatar" id="profileAvatar">U</div>
+          <div class="profile-text">
+            <strong id="profileName">User</strong>
+            <span>Chat member</span>
+          </div>
+        </div>
+      </div>
+
+      <button id="logoutButton" class="logout-button" type="button">
+        <span aria-hidden="true">↪</span> Leave chat
+      </button>
+    </aside>
+
+    <main class="chat-main">
+      <header class="chat-header">
+        <div>
+          <div class="channel-title"><span>#</span> Group Chat</div>
+          <p>One team. One conversation.</p>
+        </div>
+
+        <div class="header-status">
+          <span class="status-dot"></span>
+          <span>Live chat</span>
+        </div>
+      </header>
+
+      <section class="welcome-banner">
+        <div class="welcome-symbol">✦</div>
+        <div>
+          <h2>Welcome to the conversation!</h2>
+          <p>Say hello and share your thoughts with the team.</p>
+        </div>
+      </section>
+
+      <section
+        id="messages"
+        class="messages"
+        aria-label="Chat messages"
+        aria-live="polite"
+      >
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">✉</div>
+          <h3>Your conversation starts here</h3>
+          <p>Send the first message to get things going.</p>
+        </div>
+      </section>
+
+      <form id="messageForm" class="message-form">
+        <label for="messageInput" class="visually-hidden">
+          Write a message
+        </label>
+
+        <input
+          id="messageInput"
+          type="text"
+          placeholder="Message the group..."
+          maxlength="1000"
+          autocomplete="off"
+          required
+        >
+
+        <button id="sendButton" type="submit" aria-label="Send message">
+          Send <span aria-hidden="true">➤</span>
+        </button>
+      </form>
+
+      <footer class="chat-footer">
+        Messages are visible to everyone connected to this chat.
+      </footer>
+    </main>
+
+  </div>
+
+</body>
+</html>
